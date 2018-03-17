@@ -5,66 +5,61 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 /*Creating an array called quotes to store obects containing quote data.
 This array's scope in globally accessible.
 Storing data into the array objects to form complete quote data.
-7 quote objects and 6 object properties.
+6 quote objects and 6 object properties.
 */
 var quotes = [
-{quote :,
- source :,
- citation :,
- year :,
- tag :,
- mood :,
+{quote : "I don't know half of you half as well as I should like;" +
+"and I like less than half of you half as well as you deserve.",
+ source : "Bilbo Baggins",
+ citation : "The Fellowship Of The Ring",
+ year : 3001,
+ tag : "Fantasy",
+ mood : "Sarcastic",
 },
-{quote :,
- source :,
- citation :,
- year :,
- tag :,
- mood :,
+{quote : "Only those who are asleep make no mistakes.",
+ source : "Ingvar Kamprad",
+ citation : "The IKEA Story",
+ year : 2011,
+ tag : "Business",
+ mood : "Inspirational",
 },
-{quote :,
- source :,
- citation :,
- year :,
- tag :,
- mood :,
+{quote : "Sing and dance together and be joyous, " +
+"but let each one of you be alone, " +
+"Even as the strings of a lute are alone " +
+"though they quiver with the same music.",
+ source : "Kahlil Gibran",
+ citation : "The Prophet",
+ year : 1923,
+ tag : "Poetry",
+ mood : "Philosophical",
 },
-{quote :,
- source :,
- citation :,
- year :,
- tag :,
- mood :,
+{quote :"Thinking is impossible if you are not going to judge." +
+"If you are not going to judge, then you can just remain aware" +
+"-but you cannot think."
+ source : "Osho",
+ citation : "Awareness",
+ year : 2001,
+ tag : "Philosophy",
+ mood : "Enigmatic",
 },
-{quote :,
- source :,
- citation :,
- year :,
- tag :,
- mood :,
+{quote :"Our mistake would lie in supposing that what is radiant " +
+"no longer exists because it has been explined from the shadow-side",
+ source : "Carl Jung",
+ citation : "Modern Man in Search of a Soul",
+ year : 1933,
+ tag : "Psychology",
+ mood : "Cognizant",
 },
-{quote :,
- source :,
- citation :,
- year :,
- tag :,
- mood :,
-},
-{quote :,
- source :,
- citation :,
- year :,
- tag :,
- mood :,
-},
-]
+];
 
 /* Creating a function which uses the Math.Random function and
 randomly selects a 'quote' object from the 'quotes' array.
 */
 
 function getRandomQuote () {
-
+var randomQuoteObject = Math.floor(Math.random() * quotes.length) + 1 );
+for (i = 0;)
+reutrn randomQuoteObject;
 };
 
 /* Creating a function which calls the getRandomQuote function and
@@ -80,7 +75,7 @@ function printQuote (getRandomQuote) {
     <span class="citation"> [citation here] </span>
     <span class="year"> [year here] </span>
     <span class="tag"> [tag here] </span>
-    <span class="mood">[mood here] </span>
+    <span class="mood"> [mood here] </span>
   </p>
 document.getElementById('quote-box').innerHTML
 };
