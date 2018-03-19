@@ -5,7 +5,7 @@ document.getElementById('loadQuote').addEventListener("click", printQuote, false
 /*Creating an array called quotes to store obects containing quote data.
 This array's scope in globally accessible.
 Storing data into the array objects to form complete quote data.
-6 quote objects and 6 object properties.
+5 quote objects and 6 object properties.
 */
 var quotes = [
 {quote : "I don't know half of you half as well as I should like;" +
@@ -14,14 +14,14 @@ var quotes = [
  citation : "The Fellowship Of The Ring",
  year : 3001,
  tag : "Fantasy",
- mood : "Sarcastic",
+ mood : "Sarcastic"
 },
 {quote : "Only those who are asleep make no mistakes.",
  source : "Ingvar Kamprad",
  citation : "The IKEA Story",
  year : 2011,
  tag : "Business",
- mood : "Inspirational",
+ mood : "Inspirational"
 },
 {quote : "Sing and dance together and be joyous, " +
 "but let each one of you be alone, " +
@@ -31,16 +31,16 @@ var quotes = [
  citation : "The Prophet",
  year : 1923,
  tag : "Poetry",
- mood : "Philosophical",
+ mood : "Philosophical"
 },
 {quote :"Thinking is impossible if you are not going to judge." +
 "If you are not going to judge, then you can just remain aware" +
-"-but you cannot think."
+"-but you cannot think.",
  source : "Osho",
  citation : "Awareness",
  year : 2001,
  tag : "Philosophy",
- mood : "Enigmatic",
+ mood : "Enigmatic"
 },
 {quote :"Our mistake would lie in supposing that what is radiant " +
 "no longer exists because it has been explined from the shadow-side",
@@ -48,7 +48,7 @@ var quotes = [
  citation : "Modern Man in Search of a Soul",
  year : 1933,
  tag : "Psychology",
- mood : "Cognizant",
+ mood : "Cognizant"
 },
 ];
 
@@ -57,10 +57,10 @@ randomly selects a 'quote' object from the 'quotes' array.
 */
 
 function getRandomQuote () {
-var randomQuoteObject = Math.floor(Math.random() * quotes.length) + 1 );
-for (i = 0;)
-reutrn randomQuoteObject;
-};
+    Math.floor(Math.random() * quotes.length + 1 );
+    return getRandomQuote;
+    console.log(getRandomQuote());
+}
 
 /* Creating a function which calls the getRandomQuote function and
 returns the quote object in a variable. Constructs a string using HTML
@@ -69,13 +69,13 @@ objects that don't have certain properties using conditional statements.
 Finally, the function displays the concatonated string to the page.
 */
 
-function printQuote (getRandomQuote) {
-  <p class="quote"> [quote here] </p>
-  <p class="source"> [source here]
-    <span class="citation"> [citation here] </span>
-    <span class="year"> [year here] </span>
-    <span class="tag"> [tag here] </span>
-    <span class="mood"> [mood here] </span>
-  </p>
+function printQuote () {
+var randomQuote = getRandomQuote ();
+html =  '<p class="quote">' + randomQuote.quote + '</p>';
+html += '<p class="source">' + randomQuote.source;
+html += '<span class="citation">' + randomQuote.citation + '</span>';
+html += '<span class="year">' + randomQuote.year + '</span>';
+html += '<span class="tag">' + randomQuote.tag + '</span>';
+html += '<span class="mood">' + randomQuote.mood + '</span></p>';
 document.getElementById('quote-box').innerHTML
 };
