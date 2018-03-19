@@ -8,7 +8,7 @@ Storing data into the array objects to form complete quote data.
 5 quote objects and 6 object properties.
 */
 var quotes = [
-{quote : "I don't know half of you half as well as I should like;" +
+{quote : "I don't know half of you half as well as I should like; " +
 "and I like less than half of you half as well as you deserve.",
  source : "Bilbo Baggins",
  citation : "The Fellowship Of The Ring",
@@ -33,7 +33,7 @@ var quotes = [
  tag : "Poetry",
  mood : "Philosophical"
 },
-{quote :"Thinking is impossible if you are not going to judge." +
+{quote :"Thinking is impossible if you are not going to judge. " +
 "If you are not going to judge, then you can just remain aware" +
 "-but you cannot think.",
  source : "Osho",
@@ -57,9 +57,9 @@ randomly selects a 'quote' object from the 'quotes' array.
 */
 
 function getRandomQuote () {
-    Math.floor(Math.random() * quotes.length + 1 );
-    return getRandomQuote;
-    console.log(getRandomQuote());
+  var randomArrayNum = Math.floor(Math.random() * quotes.length);
+  var actualQuote = quotes[randomArrayNum];
+    return actualQuote;
 }
 
 /* Creating a function which calls the getRandomQuote function and
@@ -73,9 +73,15 @@ function printQuote () {
 var randomQuote = getRandomQuote ();
 html =  '<p class="quote">' + randomQuote.quote + '</p>';
 html += '<p class="source">' + randomQuote.source;
+if (randomQuote.citation) {
 html += '<span class="citation">' + randomQuote.citation + '</span>';
+}
+if (randomQuote.year) {
 html += '<span class="year">' + randomQuote.year + '</span>';
+}
 html += '<span class="tag">' + randomQuote.tag + '</span>';
 html += '<span class="mood">' + randomQuote.mood + '</span></p>';
-document.getElementById('quote-box').innerHTML
+document.getElementById('quote-box').innerHTML = html;
 };
+
+printQuote();
