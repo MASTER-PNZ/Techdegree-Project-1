@@ -62,14 +62,28 @@ function getRandomQuote () {
     return actualQuote;
 }
 
+/* Creating a function to randomly change the screen's backgorund color
+when using the printQuote function.
+*/
+function getRndmBckgroundColor () {
+  var red = Math.floor(Math.random() * 256 );
+  var green = Math.floor(Math.random() * 256 );
+  var blue = Math.floor(Math.random() * 256 );
+  var rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+  document.body.style.backgroundColor = rgbColor;
+}
 /* Creating a function which calls the getRandomQuote function and
-returns the quote object in a variable. Constructs a string using HTML
+returns the quote object in a variable.
+Calls the getRndmBckgroundColor function to create a random background color
+when the printQuote function is called
+Constructs a string using HTML
 using the properties from the objects, taking into consideration
 objects that don't have certain properties using conditional statements.
 Finally, the function displays the concatonated string to the page.
 */
 
 function printQuote () {
+getRndmBckgroundColor ();
 var randomQuote = getRandomQuote ();
 html =  '<p class="quote">' + randomQuote.quote + '</p>';
 html += '<p class="source">' + randomQuote.source;
