@@ -39,7 +39,7 @@ var quotes = [
  mood : "Enigmatic"
 },
 {quote :"Our mistake would lie in supposing that what is radiant " +
-"no longer exists because it has been explined from the shadow-side",
+"no longer exists because it has been explained from the shadow-side",
  source : "Carl Jung",
  citation : "Modern Man in Search of a Soul",
  year : 1933,
@@ -67,10 +67,17 @@ function getRndmBckgroundColor () {
   var blue = Math.floor(Math.random() * 256 );
   var rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
   document.body.style.backgroundColor = rgbColor;
+  document.getElementById('loadQuote').style.backgroundColor = rgbColor;
 }
 
+
 function refreshPage () {
-  var intervalID = setInterval (printQuote, 15000);
+  if (printQuote === true) {
+    var intervalID = setInterval (printQuote, 15000);
+    return refreshPage;
+  } else {
+      var intervalID = setInterval (printQuote, 15000);
+ }
 }
 /* Creating a function which calls the getRandomQuote function and
 returns the quote object in a variable.
@@ -85,7 +92,7 @@ Finally, the function displays the concatonated string to the page.
 function printQuote () {
 getRndmBckgroundColor ();
 var randomQuote = getRandomQuote ();
-html =  '<p class="quote">' + randomQuote.quote + '</p>';
+var html =  '<p class="quote">' + randomQuote.quote + '</p>';
 html += '<p class="source">' + randomQuote.source;
 if (randomQuote.citation) {
 html += '<span class="citation">' + randomQuote.citation + '</span>';
