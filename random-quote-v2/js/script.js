@@ -1,7 +1,3 @@
-// event listener to respond to "Show another quote" button clicks
-// when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
 /*Creating an array called quotes to store obects containing quote data.
 This array's scope in globally accessible.
 Storing data into the array objects to form complete quote data.
@@ -72,6 +68,10 @@ function getRndmBckgroundColor () {
   var rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
   document.body.style.backgroundColor = rgbColor;
 }
+
+function refreshPage () {
+  var intervalID = setInterval (printQuote, 15000);
+}
 /* Creating a function which calls the getRandomQuote function and
 returns the quote object in a variable.
 Calls the getRndmBckgroundColor function to create a random background color
@@ -98,4 +98,10 @@ html += '<span class="mood">' + randomQuote.mood + '</span></p>';
 document.getElementById('quote-box').innerHTML = html;
 };
 
+// event listener to respond to "Show another quote" button clicks
+// when user clicks anywhere on the button, the "printQuote" function is called
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+//Calling the printQuote and refreshPage functions in the global scope.
+refreshPage();
 printQuote();
